@@ -1,17 +1,6 @@
-class FieldElement:
-    def __init__(self, num, prime):
+from finite_field import FieldElement
+a = FieldElement(5, 13)
+b = FieldElement(2, 13)
+c = FieldElement(3, 13)
 
-        if num >= prime or num < 0:
-            error = 'Num {} not in field range 0 to {}'.format(
-                num, prime - 1)
-            raise ValueError(error)
-        self.num = num
-        self.prime = prime
-
-    def __repr__(self):
-        return 'FieldElement_{}({})'.format(self.prime, self.num)
-
-    def __eq__(self, other):
-        if other is None:
-            return False
-        return self.num == other.num and self.prime == other.prime
+print(a - b)
